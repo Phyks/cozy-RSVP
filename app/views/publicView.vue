@@ -1,5 +1,4 @@
-<template>
-  <div>
-    <p>Hello world</p>
-  </div>
+<template lang="pug">
+  div
+    p {{ 'Hello world' }}
 </template>
