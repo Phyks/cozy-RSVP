@@ -1,4 +1,4 @@
-import { publicView, dashboardView } from './views';
+import { publicView, dashboardView } from './views'
 
 export default [
   {

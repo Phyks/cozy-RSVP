@@ -16,10 +16,10 @@ const router = new VueRouter({
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
-    new Vue({
-        el: '[role=application]',
-        render: h => h(App),
-        router
-    })
-    console.log('App has been initialized.')
+  const vueApp = new Vue({
+    render: h => h(App),
+    router
+  })
+  vueApp.$mount('[role=application]')
+  console.log('App has been initialized.')
 })
