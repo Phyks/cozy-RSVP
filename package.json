@@ -1,14 +1,14 @@
 {
-  "name": "RSVP",
-  "version": "",
+  "name": "cozy-RSVP",
+  "version": "0.0.1",
   "cozy-type": "static",
   "cozy-displayName": "RSVP",
   "cozy-color": "",
-  "description": "",
-  "license": "",
+  "description": "A cozy version of http://calendly.com/.",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Phyks/cozy-RSVP"
   },
   "icon-path": "",
   "cozy-permissions": {
@@ -26,6 +26,7 @@
     "Phyks (Lucas Verney)"
   ],
   "dependencies": {
+    "cozysdk-client": "0.0.7",
     "vue": "^2.0.3",
     "vue-router": "^2.0.1"
   },
