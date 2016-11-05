@@ -23,7 +23,7 @@
                   template(v-for="(member, index) in RSVPItem.members")
                     template(v-if="index > 0")
                         | ,&#32;
-                    a(href='mailto:member.email') {{ member.name }}
+                    a(v-bind:href="'mailto:' + member.email") {{ member.name }}
                   span {{ ' with you' }}
                   br
                   span
