@@ -28,7 +28,7 @@
                   br
                   span
                     span {{ '(' }}
-                    strong {{ RSVPItem.length }} minutes
+                    strong {{ eventTypes[RSVPItem.eventTypeHash].length }} minutes
                     span {{ ' meeting)' }}
                 td(v-if="RSVPItem.status", class="center")
                     strong(class="upper") {{ RSVPItem.status }}
