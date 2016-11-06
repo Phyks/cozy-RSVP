@@ -2,13 +2,7 @@
   div
     h1 {{ 'My RSVPs' }}
 
-    nav(class='horizontalMenu')
-        ul
-            li(v-for="(eventType, hash) in eventTypes")
-                a(v-bind:href="'/public/' + eventType.hash")
-                    span(v-bind:style="{ 'background-color': eventType.color }" class='colorSpan')
-                    | New {{ eventType.length }} mins meeting
-        button New event type
+    event-types-nav(v-bind:eventTypes="eventTypes")
 
     ul
         li(v-for="(RSVPItemsForDay, day) in RSVPItems")
@@ -17,7 +11,7 @@
             table
               tr(v-for="(RSVPItem, index) in RSVPItemsForDay")
                 td
-                    span(v-bind:style="{ 'background-color': eventTypes[RSVPItem.eventTypeHash].color }" class='colorSpan')
+                    colorSpan(v-bind:color="eventTypes[RSVPItem.eventTypeHash].color")
                     span {{ RSVPItem.startTime }} - {{ RSVPItem.endTime }}
                 td
                   template(v-for="(member, index) in RSVPItem.members")
@@ -37,6 +31,8 @@
                     option(selected) {{ '-' }}
                     option {{ 'Accept' }}
                     option {{ 'Discard' }}
+        p
+            em Times are in your computer local timezone.
 </template>
 
 <style lang="stylus" scoped>
@@ -52,17 +48,6 @@
     hr
         border 1px solid black
 
-
-    .horizontalMenu ul
-        margin 0
-        padding 0
-        margin-bottom 1em
-    .horizontalMenu li
-        display inline
-        text-align center
-        margin 1em
-
-
     table
         margin auto
         text-align left
@@ -76,17 +61,12 @@
         text-transform capitalize
     .center
         text-align center
-    .colorSpan
-        border-radius 100%
-        background-color lightgrey
-        width 2em
-        height 2em
-        display inline-block
-        margin-right .5em
-        vertical-align middle
 </style>
 
 <script>
+import colorSpan from '../components/colorSpan.vue'
+import eventTypesNav from '../components/eventTypesNav.vue'
+
 export default {
     data () {
         return {
@@ -139,6 +119,10 @@ export default {
                 }
             }
         }
+    },
+    components: {
+        colorSpan,
+        eventTypesNav
     }
 }
 </script>

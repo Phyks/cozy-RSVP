@@ -1,23 +1,9 @@
 <template lang="pug">
-  div
-    router-link()  // TODO: History back
-
-    h1
-        color-span(v-bind:color="eventType.color")
-        | {{ eventType.length }} minutes meeting
-        | with&#32;
-        a(v-bind:href="'mailto:' + owner.email") {{ owner.name }}
-
-    router-view
+    public-slot-picker(v-bind:hash="$route.params.hash", v-bind:availableSlots="availableSlotsPerDay[$route.params.day]", v-bind:day="$route.params.day")
 </template>
 
-<style lang="stylus" scoped>
-    h1
-        display inline-block
-</style>
-
 <script>
-import colorSpan from '../components/colorSpan.vue'
+import publicSlotPicker from '../components/publicSlotPicker.vue'
 
 export default {
     data () {
@@ -28,11 +14,11 @@ export default {
                 color: "yellow"
             },
             owner: {
-                name: "Phyks",
-                email: "phyks@example.com"
+                name: "Phyks"
             },
             availableSlotsPerDay: {
                 "06-11-2016": [
+                    "09:30 - 09:45"
                 ],
                 "07-11-2016": [
                 ],
@@ -43,9 +29,8 @@ export default {
             }
         }
     },
-
     components: {
-        colorSpan
+        publicSlotPicker
     }
 }
 </script>
