@@ -12,26 +12,26 @@ export default [
     name: 'publicView',
     component: publicView,
     children: [
-        {
-            path: '',
-            name: 'publicDaySelectionView',
-            component: publicDaySelectionView
-        },
-        {
-            path: ':day',
-            name: 'publicSlotSelectionView',
-            component: publicSlotSelectionView
-        },
-        {
-            path: ':day/:timeBegin/:timeEnd',
-            name: 'publicContactInfosView',
-            component: publicContactInfosView
-        },
-        {
-            path: ':day/:timeBegin/:timeEnd/done',
-            name: 'publicSlotSelectedView',
-            component: publicSlotSelectedView
-        }
+      {
+        path: '',
+        name: 'publicDaySelectionView',
+        component: publicDaySelectionView
+      },
+      {
+        path: ':day',
+        name: 'publicSlotSelectionView',
+        component: publicSlotSelectionView
+      },
+      {
+        path: ':day/:timeBegin/:timeEnd',
+        name: 'publicContactInfosView',
+        component: publicContactInfosView
+      },
+      {
+        path: ':day/:timeBegin/:timeEnd/done',
+        name: 'publicSlotSelectedView',
+        component: publicSlotSelectedView
+      }
     ]
   },
   {

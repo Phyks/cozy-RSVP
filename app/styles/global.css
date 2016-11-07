@@ -1,5 +1,6 @@
 body {
-  line-height: 1.5em
+  line-height: 1.5em;
+  background-color: white;
 }
 
 .sr-only {
@@ -14,9 +15,9 @@ body {
 }
 
 .upper {
-    text-transform: capitalize
+    text-transform: capitalize;
 }
 
 .center {
-    text-align: center
+    text-align: center;
 }

@@ -9,6 +9,12 @@ import routes from './routes'
 // Initialize Vue
 Vue.use(VueRouter)
 
+// Initialize Vue filters
+Vue.filter(
+    'capitalize',
+    str => str.charAt(0).toUpperCase() + str.slice(1)
+)
+
 // Initialize router
 const router = new VueRouter({
   routes

@@ -6,8 +6,10 @@
                  router-link(v-bind:to="{ name: 'publicContactInfosView', params: { hash: hash, day: day, timeBegin: slot.timeBegin, timeEnd: slot.timeEnd } }")
                     | {{ slot.timeBegin }} - {{ slot.timeEnd }}
 
-        p
-            em Times are in {{ timezone }} timezone.
+        p.
+            Times are in
+            #[em {{ timezone }}]
+            timezone.
 </template>
 
 <style lang="stylus" scoped>

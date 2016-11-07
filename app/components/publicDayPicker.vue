@@ -6,8 +6,10 @@
                 router-link(v-bind:to="{ name: 'publicSlotSelectionView', params: { hash: hash, day: day } }")
                     | {{ day }}
 
-        p
-            em Times are in {{ timezone }} timezone.
+        p.
+            Times are in
+            #[em {{ timezone }}]
+            timezone.
 </template>
 
 <style lang="stylus" scoped>

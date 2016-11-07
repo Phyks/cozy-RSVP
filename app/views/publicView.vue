@@ -1,10 +1,10 @@
 <template lang="pug">
   div
-    h1
-        color-span(v-bind:color="eventType.color")
-        | {{ eventType.length }} minutes meeting
-        | with&#32;
-        a(v-bind:href="'mailto:' + owner.email") {{ owner.name }}
+    h1.
+        #[color-span(v-bind:color="eventType.color")]
+        {{ eventType.length }} minutes meeting
+        with
+        #[a(v-bind:href="'mailto:' + owner.email") {{ owner.name }}]
 
     router-view
 
