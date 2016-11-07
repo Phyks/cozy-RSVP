@@ -8,14 +8,6 @@ import publicDayPicker from '../components/publicDayPicker.vue'
 export default {
     data () {
         return {
-            eventType: {
-                hash: "15toto",
-                length: 15,
-                color: "yellow"
-            },
-            owner: {
-                name: "Phyks"
-            },
             availableSlotsPerDay: {
                 "06-11-2016": [
                 ],

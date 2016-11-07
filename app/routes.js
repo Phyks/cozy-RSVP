@@ -1,4 +1,10 @@
-import { publicView, publicDaySelectionView, publicSlotSelectionView, publicSlotSelectedView, dashboardView } from './views'
+import {
+    publicView,
+    publicDaySelectionView,
+    publicSlotSelectionView,
+    publicContactInfosView,
+    publicSlotSelectedView,
+    dashboardView } from './views'
 
 export default [
   {
@@ -17,7 +23,12 @@ export default [
             component: publicSlotSelectionView
         },
         {
-            path: ':day/:slot',
+            path: ':day/:timeBegin/:timeEnd',
+            name: 'publicContactInfosView',
+            component: publicContactInfosView
+        },
+        {
+            path: ':day/:timeBegin/:timeEnd/done',
             name: 'publicSlotSelectedView',
             component: publicSlotSelectedView
         }

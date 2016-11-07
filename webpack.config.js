@@ -22,6 +22,10 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   },

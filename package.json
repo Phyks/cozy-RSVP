@@ -30,6 +30,7 @@
   ],
   "dependencies": {
     "cozysdk-client": "0.0.7",
+    "moment-timezone": "^0.5.9",
     "normalize.css": "^5.0.0",
     "vue": "^2.0.3",
     "vue-router": "^2.0.1"
@@ -43,6 +44,7 @@
     "css-loader": "^0.25.0",
     "debug-loader": "0.0.1",
     "http-server": "^0.9.0",
+    "json-loader": "^0.5.4",
     "pug": "^2.0.0-beta6",
     "pug-cli": "^1.0.0-alpha6",
     "pug-loader": "^2.3.0",

@@ -1,7 +1,5 @@
 <template lang="pug">
   div
-    router-link()  // TODO: History back
-
     h1
         color-span(v-bind:color="eventType.color")
         | {{ eventType.length }} minutes meeting
@@ -9,6 +7,9 @@
         a(v-bind:href="'mailto:' + owner.email") {{ owner.name }}
 
     router-view
+
+    div(v-if="$route.name != 'publicSlotSelectedView'")
+        button(v-on:click="back") Back
 </template>
 
 <style lang="stylus" scoped>
@@ -30,20 +31,14 @@ export default {
             owner: {
                 name: "Phyks",
                 email: "phyks@example.com"
-            },
-            availableSlotsPerDay: {
-                "06-11-2016": [
-                ],
-                "07-11-2016": [
-                ],
-                "08-11-2016": [
-                ],
-                "10-11-2016": [
-                ]
             }
         }
     },
-
+    methods: {
+        back(ev) {
+            this.$router.go(-1)
+        }
+    },
     components: {
         colorSpan
     }

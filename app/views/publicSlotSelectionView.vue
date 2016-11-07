@@ -8,17 +8,12 @@ import publicSlotPicker from '../components/publicSlotPicker.vue'
 export default {
     data () {
         return {
-            eventType: {
-                hash: "15toto",
-                length: 15,
-                color: "yellow"
-            },
-            owner: {
-                name: "Phyks"
-            },
             availableSlotsPerDay: {
                 "06-11-2016": [
-                    "09:30 - 09:45"
+                    {
+                        timeBegin: "09:30",
+                        timeEnd: "09:45"
+                    }
                 ],
                 "07-11-2016": [
                 ],

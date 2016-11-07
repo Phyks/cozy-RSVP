@@ -1,3 +1,3 @@
 <template lang="pug">
-    p TODO
+    p Slot successfully requested
 </template>

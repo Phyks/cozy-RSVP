@@ -3,11 +3,11 @@
         h2 Pick a slot
         ul
             li(v-for="slot in availableSlots")
-                 router-link(v-bind:to="{ name: 'publicSlotSelectedView', params: { hash: hash, day: day, slot: slot } }")
-                    | {{ slot }}
+                 router-link(v-bind:to="{ name: 'publicContactInfosView', params: { hash: hash, day: day, timeBegin: slot.timeBegin, timeEnd: slot.timeEnd } }")
+                    | {{ slot.timeBegin }} - {{ slot.timeEnd }}
 
         p
-            em Times are in your computer local timezone.
+            em Times are in {{ timezone }} timezone.
 </template>
 
 <style lang="stylus" scoped>
@@ -27,7 +27,28 @@
 </style>
 
 <script>
+// NPM imports
+import moment from 'moment-timezone'
+
 export default {
-    props: ['availableSlots', 'hash', 'day']
+    props: {
+        availableSlots: {
+            type: Array,
+            required: true
+        },
+        hash: {
+            type: String,
+            required: true
+        },
+        day: {
+            type: String,
+            required: true
+        }
+    },
+    data () {
+        return {
+            timezone: moment.tz.guess()
+        }
+    }
 }
 </script>

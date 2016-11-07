@@ -3,7 +3,7 @@
         ul
             li(v-for="(eventType, hash) in eventTypes")
                 router-link(v-bind:to="{ name: 'publicView', params: { hash: hash } }")
-                    colorSpan(v-bind:color="eventType.color")
+                    color-span(v-bind:color="eventType.color")
                     | New {{ eventType.length }} mins meeting
 </template>
 
@@ -22,7 +22,12 @@
 import colorSpan from './colorSpan.vue'
 
 export default {
-    props: ['eventTypes'],
+    props: {
+        eventTypes: {
+            type: Object,
+            required: true
+        }
+    },
     components: {
         colorSpan
     }

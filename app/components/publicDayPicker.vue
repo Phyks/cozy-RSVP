@@ -7,7 +7,7 @@
                     | {{ day }}
 
         p
-            em Times are in your computer local timezone.
+            em Times are in {{ timezone }} timezone.
 </template>
 
 <style lang="stylus" scoped>
@@ -27,7 +27,24 @@
 </style>
 
 <script>
+// NPM imports
+import moment from 'moment-timezone'
+
 export default {
-    props: ['availableSlotsPerDay', 'hash']
+    props: {
+        availableSlotsPerDay: {
+            type: Object,
+            required: true
+        },
+        hash: {
+            type: String,
+            required: true
+        }
+    },
+    data () {
+        return {
+            timezone: moment.tz.guess()
+        }
+    }
 }
 </script>

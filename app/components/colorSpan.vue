@@ -15,6 +15,11 @@
 
 <script>
 export default {
-    props: ['color']
+    props: {
+        color: {
+            type: String,
+            required: true
+        }
+    }
 }
 </script>
