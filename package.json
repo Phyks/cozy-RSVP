@@ -19,11 +19,16 @@
   "scripts": {
     "build:prod": "cross-env NODE_ENV=production webpack -p && pug --out dist/ index.pug",
     "build:dev": "cross-env NODE_ENV=development webpack && pug --pretty --out dist/ index.pug",
-    "lint": "standard 'app/**/*.js' 'webpack.config.js'",
+    "lint": "standard app/**/*.js app/**/*.vue webpack.config.js",
     "clean": "rimraf dist/*",
     "watch:prod": "cross-env NODE_ENV=production webpack -p --progress --colors --watch",
     "watch:dev": "cross-env NODE_ENV=development webpack --progress --colors --watch",
     "serve": "http-server dist"
+  },
+  "standard": {
+    "plugins": [
+      "vue"
+    ]
   },
   "contributors": [
     "Phyks (Lucas Verney)"
@@ -43,6 +48,7 @@
     "cross-env": "^3.1.3",
     "css-loader": "^0.25.0",
     "debug-loader": "0.0.1",
+    "eslint-plugin-vue": "^1.0.0",
     "http-server": "^0.9.0",
     "json-loader": "^0.5.4",
     "pug": "^2.0.0-beta6",
