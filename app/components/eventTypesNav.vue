@@ -2,7 +2,7 @@
   nav(class='horizontalMenu')
     ul
       li(v-for="(eventType, hash) in eventTypes")
-        router-link(v-bind:to="{ name: 'publicView', params: { hash: hash } }")
+        router-link(v-bind:to="{ name: 'publicDaySelectionView', params: { hash: hash } }")
           color-span(v-bind:color="eventType.color")
           | New {{ eventType.length }} mins meeting
 </template>

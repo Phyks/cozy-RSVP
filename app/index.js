@@ -17,15 +17,15 @@ Vue.filter(
 
 // Initialize router
 const router = new VueRouter({
+  base: '#apps/RSVP',
   routes
 })
 
 // Initialize application
 document.addEventListener('DOMContentLoaded', () => {
-  const vueApp = new Vue({
-    render: h => h(App),
-    router
-  })
-  vueApp.$mount('[role=application]')
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount('[role=application]')
   console.log('App has been initialized.')
 })

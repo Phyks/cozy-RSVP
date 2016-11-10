@@ -9,7 +9,6 @@ import {
 export default [
   {
     path: '/public/:hash',
-    name: 'publicView',
     component: publicView,
     children: [
       {
