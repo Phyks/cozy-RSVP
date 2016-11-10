@@ -36,8 +36,11 @@ export default [
   },
   {
     path: '/dashboard',
-    alias: '/',
     name: 'dashboard',
     component: dashboardView
+  },
+  {
+    path: '/',
+    redirect: '/dashboard'
   }
 ]
